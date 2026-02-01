@@ -3,714 +3,300 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>阿里巴巴清关业务官方简介</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>清关&签约用户规则说明</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            font-family: "Microsoft YaHei", sans-serif;
         }
-        
         body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background-color: #f5f7fa;
+            line-height: 1.8;
             color: #333;
-            line-height: 1.6;
-            min-height: 100vh;
-            padding: 15px;
+            margin: 0;
+            padding: 0;
         }
-        
-        .container {
-            max-width: 100%;
-            margin: 0 auto;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        /* 顶部轮播/图片 - 图一样式 */
+        .top-banner {
+            width: 100%;
+            height: auto;
             overflow: hidden;
         }
-        
-        .header {
-            background: linear-gradient(to right, #FF6A00, #FF8E00);
-            color: white;
-            padding: 20px 15px;
+        .top-banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        /* 原有橙色标题栏调整 */
+        .top-header {
+            background-color: #ff7800; /* 统一的橙色/黄色系 */
+            width: 100%;
+            padding: 30px 0;
             text-align: center;
         }
-        
-        .header h1 {
-            font-size: 22px;
-            margin-bottom: 8px;
-            line-height: 1.3;
+        .top-header h1 {
+            color: #ffffff;
+            font-size: 28px;
+            margin: 0;
+            font-weight: 600;
         }
-        
-        .header .subtitle {
-            font-size: 14px;
+        .top-header p {
+            color: #ffffff;
+            font-size: 16px;
+            margin: 8px 0 0 0;
             opacity: 0.9;
         }
-        
-        /* 新增：清关业务介绍图片区域 */
-        .business-intro-section {
-            background: white;
-            padding: 25px 15px;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .business-intro-title {
-            color: #e41b23;
-            font-size: 20px;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #e41b23;
-        }
-        
-        .business-intro-content {
-            font-size: 14px;
-            line-height: 1.6;
-            color: #555;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        
-        .advantages-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .advantage-item {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 3px solid #e41b23;
-        }
-        
-        .advantage-title {
-            color: #e41b23;
-            font-weight: bold;
-            font-size: 14px;
-            margin-bottom: 8px;
-        }
-        
-        .advantage-desc {
-            color: #666;
-            font-size: 12px;
-            line-height: 1.4;
-        }
-        
-        .content {
-            padding: 20px 15px;
-        }
-        
-        .section {
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            padding: 30px;
             margin-bottom: 30px;
-            background: #f8f9fa;
-            padding: 20px 15px;
-            border-radius: 10px;
-            border-left: 5px solid #FF6A00;
         }
-        
-        .section-title {
-            color: #FF6A00;
-            font-size: 18px;
+        /* 清关业务介绍样式 */
+        .clearance-intro {
+            margin-bottom: 30px;
+        }
+        .intro-title {
+            font-size: 22px;
+            color: #ff7800; /* 标题橙色 */
+            text-align: center;
             margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            font-weight: bold;
         }
-        
-        .section-title i {
-            font-size: 20px;
-        }
-        
-        .business-description {
-            line-height: 1.7;
-            margin-bottom: 15px;
+        .intro-desc {
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 20px;
             color: #555;
-            font-size: 14px;
         }
-        
-        .order-details {
-            background: white;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 15px;
-            margin: 15px 0;
-        }
-        
-        .order-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 12px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .order-title {
-            color: #1A2A6C;
-            font-weight: bold;
-            font-size: 16px;
-        }
-        
-        .order-status {
-            background: #28a745;
-            color: white;
-            padding: 4px 8px;
-            border-radius: 12px;
-            font-size: 11px;
-        }
-        
-        .order-info {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-        
-        .info-item {
-            display: flex;
-            margin-bottom: 8px;
-        }
-        
-        .info-label {
-            width: 80px;
-            font-weight: bold;
-            color: #666;
-            font-size: 13px;
-            flex-shrink: 0;
-        }
-        
-        .info-value {
-            flex: 1;
-            color: #333;
-            font-size: 13px;
-        }
-        
-        .product-card {
-            background: #f8f9fa;
-            padding: 12px;
-            border-radius: 6px;
-            margin: 12px 0;
-        }
-        
-        .product-name {
-            font-weight: bold;
-            margin-bottom: 5px;
-            color: #333;
-            font-size: 14px;
-        }
-        
-        .product-spec {
-            color: #666;
-            font-size: 12px;
-        }
-        
-        .amount-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin: 15px 0;
-        }
-        
-        .amount-item {
-            background: white;
-            padding: 12px;
-            border-radius: 6px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .amount-label {
-            font-size: 13px;
-            color: #666;
-        }
-        
-        .amount-value {
-            font-weight: bold;
-            color: #333;
-            font-size: 16px;
-        }
-        
-        .profit-green {
-            color: #28a745;
-        }
-        
-        .profit-calc {
-            background: #fff3e0;
-            padding: 12px;
-            border-radius: 6px;
-            margin: 15px 0;
-            border-left: 4px solid #FF9800;
-        }
-        
-        .profit-title {
-            font-weight: bold;
-            margin-bottom: 8px;
-            color: #e65100;
-            font-size: 14px;
-        }
-        
-        .profit-calc p {
-            font-size: 13px;
-            margin-bottom: 8px;
-            line-height: 1.5;
-        }
-        
-        .operation-steps {
-            display: flex;
-            flex-direction: column;
+        .intro-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 15px;
-            margin: 20px 0;
         }
-        
-        .step-card {
-            background: white;
+        .intro-card {
+            background: #fff;
+            border: 1px solid #ff7800; /* 卡片边框橙色 */
+            border-radius: 8px;
             padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            border-top: 4px solid #FF6A00;
         }
-        
-        .step-number {
-            background: #FF6A00;
-            color: white;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 16px;
-            margin: 0 auto 10px;
-        }
-        
-        .step-title {
-            font-weight: bold;
-            margin-bottom: 8px;
-            color: #333;
-            font-size: 14px;
-        }
-        
-        .step-desc {
-            color: #666;
-            font-size: 12px;
-            line-height: 1.5;
-        }
-        
-        .advantages-section {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin: 20px 0;
-        }
-        
-        .advantage-card {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-            border-left: 4px solid #FF6A00;
-        }
-        
-        .advantage-card-title {
-            font-weight: bold;
-            margin-bottom: 8px;
-            color: #333;
-            font-size: 14px;
-        }
-        
-        .advantage-card-desc {
-            color: #666;
-            font-size: 13px;
-            line-height: 1.5;
-        }
-        
-        .time-calc {
-            background: #e3f2fd;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 20px 0;
-            border-left: 4px solid #2196F3;
-        }
-        
-        .time-title {
-            font-weight: bold;
-            margin-bottom: 8px;
-            color: #1565c0;
-            font-size: 14px;
-        }
-        
-        .time-calc p {
-            font-size: 13px;
-            margin-bottom: 8px;
-            line-height: 1.5;
-        }
-        
-        .signature-section {
-            background: #f8f9fa;
-            padding: 20px 15px;
-            border-radius: 8px;
-            margin-top: 30px;
-            text-align: center;
-        }
-        
-        .signature-section h3 {
-            font-size: 16px;
+        .intro-card h4 {
+            color: #ff7800; /* 卡片标题橙色 */
+            font-size: 18px;
             margin-bottom: 10px;
-            color: #333;
-        }
-        
-        .signature-section p {
-            font-size: 13px;
-            margin-bottom: 15px;
-            line-height: 1.5;
-        }
-        
-        .signature-line {
-            height: 1px;
-            background: #333;
-            margin: 20px 0 15px;
-        }
-        
-        .signature-fields {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin-top: 20px;
-        }
-        
-        .signature-field {
-            text-align: left;
-        }
-        
-        .signature-label {
             font-weight: bold;
-            margin-bottom: 8px;
-            font-size: 14px;
         }
-        
-        .signature-line-field {
-            height: 1px;
-            background: #333;
-            margin: 15px 0 8px;
+        .intro-card p {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.6;
         }
-        
-        .signature-date {
-            font-size: 12px;
-            color: #666;
+        h2 {
+            color: #ff7800; /* 标题色匹配顶部橙色 */
+            margin: 25px 0 15px;
+            font-size: 20px;
+            border-left: 4px solid #ff7800;
+            padding-left: 10px;
         }
-        
-        .footer {
-            background: #333;
-            color: white;
-            padding: 20px 15px;
-            text-align: center;
+        h3 {
+            color: #e06c00; /* 橙色系辅助色 */
+            margin: 20px 0 10px;
+            font-size: 18px;
         }
-        
-        .footer p {
-            margin: 5px 0;
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.8);
+        p {
+            margin: 10px 0;
+            font-size: 16px;
         }
-        
-        /* 响应式调整 */
-        @media (min-width: 768px) {
-            body {
-                padding: 20px;
+        .highlight {
+            color: #e53e3e;
+            font-weight: bold;
+        }
+        .profit-box {
+            background: #fff8f0; /* 浅橙色背景适配整体风格 */
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 3px solid #ff7800;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border: 1px solid #e2e8f0;
+        }
+        th {
+            background: #fff8f0; /* 浅橙色表头 */
+            color: #2d3748;
+            font-weight: bold;
+        }
+        .tip {
+            background: #fff8f0;
+            padding: 12px;
+            border-radius: 6px;
+            margin: 15px 0;
+            font-size: 15px;
+            color: #e06c00;
+            border: 1px solid #ff7800;
+        }
+        /* 结尾图片 - 图二样式 */
+        .footer-banner {
+            width: 100%;
+            height: auto;
+            margin-top: 30px;
+        }
+        .footer-banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .intro-cards {
+                grid-template-columns: 1fr;
             }
-            
-            .container {
-                max-width: 600px;
-            }
-            
-            .business-intro-section {
-                padding: 30px 20px;
-            }
-            
-            .content {
-                padding: 30px 20px;
-            }
-            
-            .section {
-                padding: 25px 20px;
-            }
-            
-            .operation-steps {
-                flex-direction: row;
-                flex-wrap: wrap;
-            }
-            
-            .step-card {
-                flex: 1 0 calc(50% - 10px);
-                min-width: 0;
-            }
-            
-            .advantages-section {
-                flex-direction: row;
-                flex-wrap: wrap;
-            }
-            
-            .advantage-card {
-                flex: 1 0 calc(50% - 10px);
-                min-width: 0;
-            }
-            
-            .signature-fields {
-                flex-direction: row;
+            .top-header h1 {
+                font-size: 24px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- 顶部图片 - 图一：全程电子清关 -->
+    <div class="top-banner">
+        <!-- 请将下面的图片链接替换为你自己的图一实际链接 -->
+        <img src="https://raw.githubusercontent.com/doudiannm-spec/qingguan/main/dinbutupian.jpg" alt="全程电子清关 分钟即可清关放行">
+    </div>
+
+    <!-- 原有橙色标题栏 -->
+    <div class="top-header">
+        <h1>阿里巴巴清关业务</h1>
+        <p>Alibaba Customs Clearance Business Agency Agreement</p>
+    </div>
+
     <div class="container">
-        <div class="header">
-            <h1>阿里巴巴清关业务</h1>
-            <div class="subtitle">Alibaba Customs Clearance Business Agency Agreement</div>
-        </div>
-        
-        <!-- 新增：清关业务介绍图片区域 -->
-        <div class="business-intro-section">
-            <h2 class="business-intro-title">清关业务介绍</h2>
-            <div class="business-intro-content">
-                阿里巴巴清关业务是为跨境电商企业提供的专业通关服务，帮助企业快速、合规地完成进出口商品通关流程。
-            </div>
-            
-            <div class="advantages-grid">
-                <div class="advantage-item">
-                    <div class="advantage-title">快速通关</div>
-                    <div class="advantage-desc">专业团队处理，平均通关时间缩短50%以上，确保货物及时送达</div>
+        <!-- 清关业务介绍板块 -->
+        <div class="clearance-intro">
+            <div class="intro-title">清关业务介绍</div>
+            <div class="intro-desc">阿里巴巴清关业务为跨境电商企业提供的专业通关服务，帮助企业快速、合规地完成进出口商品通关流程。</div>
+            <div class="intro-cards">
+                <div class="intro-card">
+                    <h4>快速通关</h4>
+                    <p>专业团队处理，平均通关时间缩短50%以上，确保货物及时送达</p>
                 </div>
-                
-                <div class="advantage-item">
-                    <div class="advantage-title">合规保障</div>
-                    <div class="advantage-desc">严格遵循海关政策，提供完整的合规解决方案，降低贸易风险</div>
+                <div class="intro-card">
+                    <h4>合规保障</h4>
+                    <p>严格遵循海关政策，提供完整的合规解决方案，降低贸易风险</p>
                 </div>
-                
-                <div class="advantage-item">
-                    <div class="advantage-title">成本优化</div>
-                    <div class="advantage-desc">合理规划关税方案，帮助企业降低运营成本，提升竞争力</div>
+                <div class="intro-card">
+                    <h4>成本优化</h4>
+                    <p>合理规划关税方案，帮助企业降低运营成本，提升竞争力</p>
                 </div>
-                
-                <div class="advantage-item">
-                    <div class="advantage-title">全程跟踪</div>
-                    <div class="advantage-desc">实时监控货物状态，提供可视化跟踪服务，让您随时掌握物流信息</div>
+                <div class="intro-card">
+                    <h4>全程跟踪</h4>
+                    <p>实时监控货物状态，提供可视化跟踪服务，让您随时掌握物流信息</p>
                 </div>
             </div>
         </div>
+
+        <!-- 原有内容：先搞懂清关到底是啥 -->
+        <h2>一、先搞懂：清关到底是啥？</h2>
+        <p>核心逻辑：清关是以个人名义做二手交易进口不限流的商品，然后转售给公司，公司按商品价格的<span class="highlight">1.8%</span>作为报酬（就是赚差价）。</p>
         
-        <div class="content">
-            <!-- 业务介绍 -->
-            <div class="section">
-                <h2 class="section-title">
-                    <i class="fas fa-shipping-fast"></i>
-                    清关业务介绍
-                </h2>
-                
-                <div class="business-description">
-                    <p>清关就是用我们个人的名义二手交易进口商品免税，减少商品所缴纳的关税，在不违反各海关政策的基础之上，利用其差异为公司节约一定的关税，为公司节省税收费用。</p>
-                    <p>每做一单清关，公司会给我们免税完商品价格的<strong>1.8%</strong>作为报酬。</p>
-                </div>
-                
-                <div class="order-details">
-                    <div class="order-header">
-                        <div class="order-title">清关订单详情</div>
-                        <div class="order-status">已清关</div>
-                    </div>
-                    
-                    <div class="order-info">
-                        <div class="info-item">
-                            <div class="info-label">开始时间：</div>
-                            <div class="info-value">2025年12月31日 09:42:32</div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-label">订单编号：</div>
-                            <div class="info-value">UB2512310942329773</div>
-                        </div>
-                    </div>
-                    
-                    <div class="product-card">
-                        <div class="product-name">XBMC艺术 智能安卓电视盒播放器</div>
-                        <div class="product-spec">[Quad CORE | 64 BIT | 4K] ×1</div>
-                    </div>
-                    
-                    <div class="amount-grid">
-                        <div class="amount-item">
-                            <div class="amount-label">清关价格</div>
-                            <div class="amount-value">￥506.00</div>
-                        </div>
-                        <div class="amount-item">
-                            <div class="amount-label">利润</div>
-                            <div class="amount-value" class="profit-green">￥9.11</div>
-                        </div>
-                        <div class="amount-item">
-                            <div class="amount-label">到账金额</div>
-                            <div class="amount-value">￥515.11</div>
-                        </div>
-                    </div>
-                    
-                    <div class="profit-calc">
-                        <div class="profit-title">盈利计算示例</div>
-                        <p>比如这单我们买506元，转售给公司515.11元，我们就赚取9.11元的利润。</p>
-                        <p>清关一天可以做20单的话：9.11 × 20 = 182.2元，一天也能赚个100-200元。</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 操作流程 -->
-            <div class="section">
-                <h2 class="section-title">
-                    <i class="fas fa-cogs"></i>
-                    操作流程
-                </h2>
-                
-                <div class="business-description">
-                    <p>清关是我们买进东西再转售给公司，所以我们的清关账户上需要预存<strong>512元</strong>的流动金。这512元可以一直循环使用（随时都可以提现）。</p>
-                </div>
-                
-                <div class="operation-steps">
-                    <div class="step-card">
-                        <div class="step-number">1</div>
-                        <div class="step-title">充值预存</div>
-                        <div class="step-desc">充值512元到清关账户作为流动金</div>
-                    </div>
-                    
-                    <div class="step-card">
-                        <div class="step-number">2</div>
-                        <div class="step-title">匹配订单</div>
-                        <div class="step-desc">系统自动匹配清关订单</div>
-                    </div>
-                    
-                    <div class="step-card">
-                        <div class="step-number">3</div>
-                        <div class="step-title">下单购买</div>
-                        <div class="step-desc">点击下单购买指定商品</div>
-                    </div>
-                    
-                    <div class="step-card">
-                        <div class="step-number">4</div>
-                        <div class="step-title">转售公司</div>
-                        <div class="step-desc">将订单直接转售给公司</div>
-                    </div>
-                    
-                    <div class="step-card">
-                        <div class="step-number">5</div>
-                        <div class="step-title">秒返本金利润</div>
-                        <div class="step-desc">本金和赚的利润一并秒返回账户</div>
-                    </div>
-                    
-                    <div class="step-card">
-                        <div class="step-number">6</div>
-                        <div class="step-title">循环操作</div>
-                        <div class="step-desc">重复操作，用512元越滚越多</div>
-                    </div>
-                </div>
-                
-                <div class="business-description">
-                    <p><strong>规则：</strong></p>
-                    <p>1. 做完20单清关后，可以把本金512元和赚的利润都提现</p>
-                    <p>2. 第二天需要重新预存512元本金继续操作</p>
-                    <p>3. 支持当天做当天把本金跟利润都提现</p>
-                </div>
-            </div>
-            
-            <!-- 清关优势 -->
-            <div class="section">
-                <h2 class="section-title">
-                    <i class="fas fa-star"></i>
-                    清关优势
-                </h2>
-                
-                <div class="advantages-section">
-                    <div class="advantage-card">
-                        <div class="advantage-card-title">免考上岗</div>
-                        <div class="advantage-card-desc">有做清关就不需要签到打卡和培训考试，做满50单直接上岗客服</div>
-                    </div>
-                    
-                    <div class="advantage-card">
-                        <div class="advantage-card-title">一对一指导</div>
-                        <div class="advantage-card-desc">上岗后有一对一的老师带您做客服，快速上手业务</div>
-                    </div>
-                    
-                    <div class="advantage-card">
-                        <div class="advantage-card-title">高效操作</div>
-                        <div class="advantage-card-desc">一天可以做20单，每单只需5-15分钟，高效便捷</div>
-                    </div>
-                    
-                    <div class="advantage-card">
-                        <div class="advantage-card-title">快速上岗</div>
-                        <div class="advantage-card-desc">50单约需2.5天即可完成，快速获得上岗资格</div>
-                    </div>
-                </div>
-                
-                <div class="time-calc">
-                    <div class="time-title">上岗时间计算</div>
-                    <p>一天可以做20单，大概5-15分钟一单，50单的话两天半就可以了。</p>
-                    <p><strong>也就是说您现在开始做的话，后天中午就可以稳稳地上岗了！</strong></p>
-                </div>
-            </div>
-            
-            <!-- 签署区域 -->
-            <div class="signature-section">
-                <h3>阿里巴巴清关业务部</h3>
-                <p>本人已阅读并完全理解以上清关业务操作流程及清关优势，同意按照阿里巴巴清关业务规范进行操作。</p>
-                
-                <div class="signature-line"></div>
-                
-                <div class="signature-fields">
-                    <div class="signature-field">
-                        <div class="signature-label">联系负责人潘国才</div>
-                        <div class="signature-line-field"></div>
-                        <div class="signature-date">平台账号：KFXP0188</div>
-                    </div>
-                    
-                    <div class="signature-field">
-                        <div class="signature-label">对接平台</div>
-                        <div class="signature-line-field"></div>
-                        <div class="signature-date">客服对接平台 </div>
-                    </div>
-                </div>
-            </div>
+        <h3>1. 资金要求</h3>
+        <p>清关账户里必须预存 <span class="highlight">512元</span> 流动资金，这笔钱能循环用，也能随时提现。</p>
+        
+        <h3>2. 操作流程</h3>
+        <ul>
+            <li>第一步：往账户充512元 → 系统匹配清关订单</li>
+            <li>第二步：下单后直接转售给公司 → 本金+利润秒回账户</li>
+            <li>第三步：重复匹配下一单（想停就提现，第二天做再重新存512元）</li>
+        </ul>
+        
+        <h3>3. 耗时&单量</h3>
+        <ul>
+            <li>1单清关：大概5-15分钟</li>
+            <li>每日上限：一天最多做20单</li>
+            <li>签约条件：做满50单（按每天20单算，2天半就能做完）</li>
+        </ul>
+
+        <h2>二、清关能赚多少钱？（举例子算明白）</h2>
+        <div class="profit-box">
+            <p>举例：做一单清关，商品价格506元</p>
+            <p>单单利润：506 × 1.8% ≈ <span class="highlight">9.11元</span></p>
+            <p>每日利润（20单）：9.11 × 20 = <span class="highlight">182.2元</span>（每天大概赚100-200元）</p>
+            <p>提现规则：本金512元循环返回，赚的利润当天就能提现</p>
         </div>
-        
-        <div class="footer">
-            <p>阿里巴巴清关业务部</p>
-            <p>地址：浙江省杭州市余杭区文一西路969号阿里巴巴西溪园区</p>
-            <p>本认证已通过阿里巴巴集团官方验证，具有法律效力和权威性</p>
-            <p>©  阿里巴巴集团 版权所有</p>
+
+        <h2>三、签约用户的规则&专属权益</h2>
+        <h3>1. 怎么成为签约用户？</h3>
+        <ul>
+            <li>当前诚信分：550分（可在余额旁查看）</li>
+            <li>加分规则：每做1单清关加1分</li>
+            <li>签约条件：做满50单 → 诚信分到600分 → 成为<span class="highlight">永久签约用户</span></li>
+            <li>额外说明：做清关不用签到、打卡、培训考试，满50单直接上岗客服</li>
+        </ul>
+
+        <h3>2. 签约用户vs考试上岗用户（权益对比）</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>对比维度</th>
+                    <th>签约用户（清关满50单）</th>
+                    <th>考试上岗用户</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>上岗门槛</td>
+                    <td>免考直接上岗客服</td>
+                    <td>需培训考试通过才能上岗</td>
+                </tr>
+                <tr>
+                    <td>设备福利</td>
+                    <td>上岗当天可领笔记本电脑（做满3个月客服，否则收回）</td>
+                    <td>无</td>
+                </tr>
+                <tr>
+                    <td>培训支持</td>
+                    <td>一对一老师手把手带教</td>
+                    <td>无</td>
+                </tr>
+                <tr>
+                    <td>代理权限</td>
+                    <td>可申请做代理，推荐新人入职能拿10%提成</td>
+                    <td>无</td>
+                </tr>
+                <tr>
+                    <td>岗位选择</td>
+                    <td>自选售前/售后、平台（唯品会/阿里/苏宁/京东等）</td>
+                    <td>公司统一安排</td>
+                </tr>
+                <tr>
+                    <td>推广权限</td>
+                    <td>可一直做影视推广</td>
+                    <td>仅限做4单推广</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip">
+            💡 关键提醒：做满50单清关（2天半可完成）就能成签约用户，享免考上岗、领电脑等专属福利，清关本金512元可循环提现，利润当天到账。
         </div>
     </div>
 
-    <script>
-        // 添加简单的交互效果
-        document.querySelectorAll('.step-card, .advantage-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-3px)';
-                this.style.transition = 'transform 0.3s ease';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-            });
-        });
-        
-        // 模拟数据更新
-        setInterval(() => {
-            const profitElement = document.querySelector('.profit-calc p:last-child');
-            const currentText = profitElement.textContent;
-            if (currentText.includes('182.2')) {
-                profitElement.textContent = '清关一天可以做20单的话：9.11 × 20 = 182.2元，月收入可达5000+元。';
-            } else {
-                profitElement.textContent = '清关一天可以做20单的话：9.11 × 20 = 182.2元，一天也能赚个100-200元。';
-            }
-        }, 5000);
-    </script>
+    <!-- 结尾图片 - 图二：跨境数字清关公共服务平台 -->
+    <div class="footer-banner">
+        <!-- 请将下面的图片链接替换为你自己的图二实际链接 -->
+        <img src="https://github.com/doudiannm-spec/qingguan/raw/main/jieweitupian.jpg" alt="跨境数字清关 公共服务平台">
+    </div>
 </body>
-
 </html>
