@@ -182,6 +182,163 @@
             text-align: center;
             margin: 20px 0;
         }
+        /* 常见问题弹窗样式 */
+        .faq-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .faq-modal-content {
+            background: white;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            overflow: auto;
+        }
+        .faq-modal-header {
+            background: #ff7800;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .faq-modal-title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .faq-modal-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .faq-modal-body {
+            padding: 20px;
+        }
+        .faq-item {
+            margin-bottom: 25px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+        .faq-question {
+            font-size: 16px;
+            color: #ff7800;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .faq-answer {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.6;
+        }
+        .detail-link {
+            color: #ff7800;
+            text-decoration: underline;
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+        .detail-link:hover {
+            color: #e06c00;
+        }
+        /* 流程图样式 */
+        .process-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 30px auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border: 1px solid #ff7800;
+        }
+        .process-title {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.5;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            padding: 0 20px;
+        }
+        .process-steps::before {
+            content: "";
+            position: absolute;
+            top: 30px;
+            left: 50px;
+            right: 50px;
+            height: 1px;
+            background-color: #ff7800;
+            z-index: 1;
+        }
+        .step-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            width: 18%;
+            text-align: center;
+        }
+        .step-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid #ff7800;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #ff7800;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .step-name {
+            font-size: 16px;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .step-desc {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.4;
+        }
+        .process-tips {
+            margin-top: 30px;
+            font-size: 16px;
+            color: #ff7800;
+            line-height: 1.5;
+            text-align: center;
+            padding: 15px;
+            background: #fff8f0;
+            border-radius: 6px;
+        }
         /* 响应式适配 */
         @media (max-width: 768px) {
             .intro-cards {
@@ -189,6 +346,31 @@
             }
             .top-header h1 {
                 font-size: 24px;
+            }
+            .faq-modal-content {
+                width: 95%;
+                margin: 20px;
+            }
+            .process-steps {
+                flex-direction: column;
+                padding: 0;
+            }
+            .process-steps::before {
+                display: none;
+            }
+            .step-item {
+                width: 100%;
+                margin-bottom: 30px;
+                flex-direction: row;
+                text-align: left;
+            }
+            .step-circle {
+                margin-right: 15px;
+                margin-bottom: 0;
+                flex-shrink: 0;
+            }
+            .step-content {
+                text-align: left;
             }
         }
     </style>
@@ -200,8 +382,9 @@
     </div>
     <!-- 原有橙色标题栏 -->
     <div class="top-header">
-        <h1>阿里巴巴清关业务</h1>
-        <p>Alibaba Customs Clearance Business Agency Agreement</p>
+        <h1>阿里巴巴清关业务-跨境清关协作平台</h1>
+        <p>Alibaba Customs Clearance Business Agency Agreement </p>
+        <p>合规清关 · 稳定收益 · 灵活就业 · 专业赋能 </p>
     </div>
     <div class="container">
         <!-- 网址表情 -->
@@ -212,6 +395,7 @@
         <div class="clearance-intro">
             <div class="intro-title">清关业务介绍</div>
             <div class="intro-desc">阿里巴巴清关业务为跨境电商企业提供的专业通关服务，帮助企业快速、合规地完成进出口商品通关流程。</div>
+            <div class="intro-desc">通过"政府公共服务体系 + 平台型企业数字能力 + 实体空间载体"的融合创新，双方将共同打造面向中小企业和创新主体的跨境出海综合赋能平台。。</div>
             <div class="intro-cards">
                 <div class="intro-card">
                     <h4>快速通关</h4>
@@ -233,17 +417,82 @@
         </div>
         <!-- 原有内容：先搞懂清关到底是啥 -->
         <h2>一、先搞懂：清关到底是啥？</h2>
-        <p>核心逻辑：清关是以个人名义做二手交易进口不限流的商品，然后转售给公司，公司按商品价格的<span class="highlight">1.8%</span>作为报酬（就是赚差价）。</p>
-        
+        <p>核心逻辑：本平台专注于跨境商品清关协作服务，通过个人名义参与二手交易进口不限流商品免税流程，帮助企业合理降低关税成本，同时为个人提供稳定、合规的收益渠道。个人利用跨境购物免税额度，分散采购进口商品后转售给合作企业，企业按商品总价的1.8%支付服务报酬，实现企业与个人的双赢。。</p>
+        <p>核心模式：清关是以个人名义做二手交易进口不限流的商品，然后转售给公司，公司按商品价格的<span class="highlight">1.8%</span>作为报酬（就是赚差价）。</p>
+         <!-- 模式优势模块 -->
+<div class="card">
+    <div class="card-header">
+        <h2 class="card-title"><i>✨</i>模式优势</h2>
+    </div>
+    <div class="content">
+        <ul style="padding-left: 25px; margin: 10px 0;">
+            <li><strong>合规性</strong>：依托个人跨境购物免税政策，操作合法合规</li>
+            <li><strong>零风险</strong>：预存资金仅作为交易流动资金，支持随时提现，资金安全有保障</li>
+            <li><strong>低门槛</strong>：仅需预存512元流动资金即可参与，无其他额外费用</li>
+            <li><strong>高灵活</strong>：每单操作仅需5-15分钟，可自主安排操作时间</li>
+            <li><strong>长期收益</strong>：累计清关50单即可升级为永久签约用户，解锁更多权益</li>
+        </ul>
+    </div>
+</div>
         <h3>1. 资金要求</h3>
-        <p>清关账户里必须预存 <span class="highlight">512元</span> 流动资金，这笔钱能循环用，也能随时提现。</p>
+        <p>清关账户里必须预存 <span class="highlight">512元</span> 流动资金，这笔钱能循环用，也能随时提现。<span class="detail-link" onclick="openFaqModal()">点击了解详情</span></p>
+        
         
         <h3>2. 操作流程</h3>
         <ul>
-            <li>第一步：往账户充512元 → 然后去匹配商品(系统匹配清关订单)</li>
-            <li>第二步：匹配出来 下单后直接转售给公司 → 转售成功后 本金+利润秒回账户</li>
+            <li>第一步：往账户充512元 → 系统匹配清关订单</li>
+            <li>第二步：下单后直接转售给公司 → 本金+利润秒回账户</li>
             <li>第三步：重复匹配下一单（想停就提现，第二天做再重新存512元）</li>
         </ul>
+        
+        <!-- 添加的操作流程图 -->
+        <div class="process-container">
+            <div class="process-title">
+                平台操作流程简洁易懂，全程线上完成，无需专业知识，具体步骤如下：
+            </div>
+            
+            <div class="process-steps">
+                <div class="step-item">
+                    <div class="step-circle">1</div>
+                    <div class="step-content">
+                        <div class="step-name">预存流动资金</div>
+                        <div class="step-desc">在清关账户预存512元流动资金，支持随时提现</div>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-circle">2</div>
+                    <div class="step-content">
+                        <div class="step-name">系统匹配商品</div>
+                        <div class="step-desc">平台自动匹配符合条件的进口商品，等待5-15分钟</div>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-circle">3</div>
+                    <div class="step-content">
+                        <div class="step-name">确认购买</div>
+                        <div class="step-desc">使用预存资金完成商品购买，无需额外付费</div>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-circle">4</div>
+                    <div class="step-content">
+                        <div class="step-name">转售给企业</div>
+                        <div class="step-desc">购买完成后一键转售，本金+收益秒返账户</div>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-circle">5</div>
+                    <div class="step-content">
+                        <div class="step-name">循环操作</div>
+                        <div class="step-desc">重复匹配-购买-转售流程，累计信用分</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-tips">
+                操作提示：除商品匹配环节等待5-15分钟外，其余操作均为即时完成，全程仅需点击操作，无需复杂操作技能。
+            </div>
+        </div>
         
         <h3>3. 耗时&单量</h3>
         <ul>
@@ -256,12 +505,12 @@
             <p>举例：做一单清关，商品价格506元</p>
             <p>单单利润：506 × 1.8% ≈ <span class="highlight">9.11元</span></p>
             <p>每日利润（20单）：9.11 × 20 = <span class="highlight">182.2元</span>（每天大概赚100-200元）</p>
-            <p>提现规则：本金512元循环返回，赚的利润当天就能提现</p>
+            <p>提现规则：预存的512元为流动资金，可循环使用，完成每单后本金+收益即时返还至账户  支持随时提现，提现流程与微信、支付宝等支付工具一致，到账及时 无任何隐藏费用，收益全额到账，平台不收取手续费</p>
         </div>
         <h2>三、签约用户的规则&专属权益</h2>
         <h3>1. 怎么成为签约用户？</h3>
         <ul>
-            <li>当前诚信分：550分（可在商城余额旁查看）</li>
+            <li>初始信用分：550分（可在商城余额旁查看）</li>
             <li>加分规则：每做1单清关加1分</li>
             <li>签约条件：做满50单 → 诚信分到600分 → 成为<span class="highlight">永久签约用户</span></li>
             <li>额外说明：做清关不用签到、打卡、培训考试，满50单直接上岗客服</li>
@@ -270,9 +519,9 @@
         <table>
             <thead>
                 <tr>
-                    <<th>对比维度</</th>
-                    <<th>签约用户（清关满50单）</</th>
-                    <<th>考试上岗用户</</th>
+                    <th>对比维度</th>
+                    <th>签约用户（清关满50单）</th>
+                    <th>考试上岗用户</th>
                 </tr>
             </thead>
             <tbody>
@@ -283,12 +532,12 @@
                 </tr>
                 <tr>
                     <td>设备福利</td>
-                    <td>上岗当天可领笔记本电脑（做满3个月客服，否则收回）</td>
+                    <td>上岗当天可免费领取笔记本电脑协助，满足居家办公硬件需求（需做满3个月客服，否则收回）</td>
                     <td>无</td>
                 </tr>
                 <tr>
                     <td>培训支持</td>
-                    <td>一对一老师手把手带教</td>
+                    <td>安排专业老师全程带教，快速掌握工作技能，轻松上岗</td>
                     <td>无</td>
                 </tr>
                 <tr>
@@ -298,7 +547,7 @@
                 </tr>
                 <tr>
                     <td>岗位选择</td>
-                    <td>自选售前/售后、平台（唯品会/阿里/苏宁/京东等）</td>
+                    <td>自选售前/售后、平台（唯品会/阿里/苏宁/京东等）自主安排工作时间，兼顾家庭与收入，实现灵活就业</td>
                     <td>公司统一安排</td>
                 </tr>
                 <tr>
@@ -309,13 +558,75 @@
             </tbody>
         </table>
         <div class="tip">
-            💡 关键提醒：做满50单清关（2天半可完成）就能成签约用户，享免考上岗、领电脑等专属福利，清关本金512元可循环提现，利润当天到账。
+            💡 关键提醒：签约用户资格永久有效，终身受益，后续可根据个人需求随时激活客服岗位，无需重复考核。。
         </div>
     </div>
     <!-- 结尾图片 - 图二：跨境数字清关公共服务平台 -->
     <div class="footer-banner">
         <img src="https://github.com/doudiannm-spec/qingguan/raw/main/jieweitupian.jpg" alt="跨境数字清关 公共服务平台">
     </div>
+
+    <!-- 常见问题弹窗 -->
+    <div id="faqModal" class="faq-modal">
+        <div class="faq-modal-content">
+            <div class="faq-modal-header">
+                <div class="faq-modal-title">常见问题</div>
+                <button class="faq-modal-close" onclick="closeFaqModal()">×</button>
+            </div>
+            <div class="faq-modal-body">
+                <div class="faq-item">
+                    <div class="faq-question">Q1 预存的512元是否安全？是否可以随时提现？</div>
+                    <div class="faq-answer">A1：预存资金完全安全，仅作为清关交易的流动资金，所有权归用户所有。支持随时提现，提现流程简单，到账及时，与微信、支付宝提现操作一致。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Q2：完成50单后，信用分达到600分，是否需要额外付费才能成为签约用户？</div>
+                    <div class="faq-answer">A2：不需要。信用分达到600分后自动升级为签约用户，无任何额外费用，权益永久有效。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Q3：每单操作需要多长时间？一天真的能做20单吗？</div>
+                    <div class="faq-answer">A3：每单匹配商品需要5-15分钟，购买和转售操作仅需1-2分钟完成。按平均每单10分钟计算，20单仅需约3.5小时，完全可以在一天内完成。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Q4：成为签约用户后，必须马上上岗客服吗？</div>
+                    <div class="faq-answer">A4：不需要。成为签约用户后，可根据个人时间安排，随时激活客服岗位，无需强制上岗。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Q5：收益是否稳定？会不会出现匹配不到商品的情况？</div>
+                    <div class="faq-answer">A5：平台合作企业资源充足，商品匹配稳定。收益比例固定为1.8%，仅受商品价格小幅影响，整体收益稳定在100-200元/天。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 打开常见问题弹窗
+        function openFaqModal() {
+            document.getElementById('faqModal').style.display = 'flex';
+        }
+        
+        // 关闭常见问题弹窗
+        function closeFaqModal() {
+            document.getElementById('faqModal').style.display = 'none';
+        }
+        
+        // 点击弹窗外部关闭
+        window.onclick = function(event) {
+            const modal = document.getElementById('faqModal');
+            if (event.target === modal) {
+                closeFaqModal();
+            }
+        }
+        
+        // ESC键关闭弹窗
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeFaqModal();
+            }
+        });
+    </script>
 </body>
 </html>
-
