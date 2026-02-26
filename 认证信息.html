@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>企业信息</title>
+    <style>
+        /* 1. 基础重置与全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #121212; /* 深黑色背景 */
+            color: #FFFFFF; /* 白色文字 */
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            padding: 20px;
+            padding-top: 60px; /* 顶部留白给标题栏 */
+        }
+
+        /* 2. 顶部标题栏样式 */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #121212;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #2A2A2A;
+            z-index: 100;
+        }
+        .header h1 {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .header p {
+            font-size: 12px;
+            color: #888888;
+        }
+        .header .menu {
+            width: 24px;
+            height: 24px;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIgMTJIMjJNMjA2IDEySDJNMTIgMjJ2LTIwIiBzdHJva2U9IiM4ODg4ODgiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPg==') no-repeat center;
+        }
+
+        /* 3. 主体卡片容器 */
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* 4. 顶部Logo与认证区域 */
+        .logo-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo-text {
+            font-size: 32px;
+            font-weight: bold;
+            color: #409EFF; /* 蓝色标题 */
+            margin-bottom: 10px;
+        }
+        .cert-badge {
+            display: inline-flex;
+            align-items: center;
+            background-color: #00C853; /* 绿色认证背景 */
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .cert-badge img {
+            width: 14px;
+            height: 14px;
+            margin-right: 5px;
+        }
+        .apply-link {
+            color: #409EFF;
+            font-size: 12px;
+            text-decoration: none;
+        }
+
+        /* 5. 信息卡片样式 */
+        .card {
+            background-color: #1E1E1E; /* 深灰卡片背景 */
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #2A2A2A;
+        }
+
+        /* 6. 标题样式 */
+        .card-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #FFFFFF;
+        }
+
+        /* 7. 信息列表样式 */
+        .info-list {
+            list-style: none;
+        }
+        .info-item {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        .info-label {
+            width: 100px;
+            color: #888888;
+            font-size: 14px;
+        }
+        .info-value {
+            flex: 1;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        .info-value a {
+            color: #409EFF;
+            text-decoration: none;
+        }
+
+        /* 8. 经营范围展开样式 */
+        .expand-link {
+            color: #409EFF;
+            font-size: 14px;
+            text-decoration: none;
+            margin-left: 5px;
+        }
+
+        /* 9. 底部说明区域 */
+        .footer-note {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #2A2A2A;
+            color: #888888;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+        .footer-note a {
+            color: #409EFF;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部标题栏 -->
+    <div class="header">
+        <h1>企业信息</h1>
+        <p>此网页由京东企业提供</p>
+        <div class="menu"></div>
+    </div>
+
+    <!-- 内容容器 -->
+    <div class="container">
+        
+        <!-- Logo与认证 -->
+        <div class="logo-section">
+            <div class="logo-text">结关交易</div>
+            <div>
+                <span class="cert-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 12L11 14L15 10M12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    已认证
+                </span>
+                <a href="#" class="apply-link"官网认证 ></a>
+            </div>
+        </div>
+
+        <!-- 认证信息卡片 -->
+        <div class="card">
+            <div class="card-title">认证信息</div>
+            <ul class="info-list">
+                <li class="info-item">
+                    <div class="info-label">结关交易</div>
+                    <div class="info-value">北京京东世纪贸易有限公司</div>
+                </li>
+                <li class="info-item">
+                    <div class="info-label">企业全称</div>
+                    <div class="info-value">北京京东世纪贸易有限公司</div>
+                </li>
+                <li class="info-item">
+                    <div class="info-label">经营类目</div>
+                    <div class="info-value">京东国际跨境进口是京东在2015年开启的跨境电子商务新业务，旨在为用户带来更优质更多选择的海外商品，让您足不出户购遍全球。</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 主体证件信息卡片 -->
+        <div class="card">
+            <div class="card-title">主体证件信息</div>
+            <ul class="info-list">
+                <li class="info-item">
+                    <div class="info-label">统一社会信用代码</div>
+                    <div class="info-value">911103026605015136</div>
+                </li>
+                <li class="info-item">
+                    <div class="info-label">企业类型</div>
+                    <div class="info-value">有限责任公司（台港澳法人独资）</div>
+                </li>
+                <li class="info-item">
+                    <div class="info-label">企业成立日期</div>
+                    <div class="info-value">2021年11月01日</div>
+                </li>
+                <li class="info-item">
+                    <div class="info-label">企业营业期限</div>
+                    <div class="info-value">2007年04月20日</div>
+                </li>
+                <li class="info-item">
+                    <div class="info-label">企业地址</div>
+                    <div class="info-value">北京市北京经济技术开发区科创十一街18号C座2层201室</div>
+                </li>
+                <li class="info-item">
+                    <div class="info-label">经营范围</div>
+                    <div class="info-value">
+                        一般项目：线上技术相关服务；结关交易；线上居家客服；影视推广；京东国际跨境进口；物联网应用服务；全球直供
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 底部说明 -->
+        <div class="footer-note">
+            <p><strong>企业微信认证说明</strong></p>
+            <p>这是一份关于“个人名义跨境电商结关协作服务”的业务介绍，核心逻辑是利用个人跨境购物免税额度，通过平台撮合，帮助个人赚取服务费，同时帮助企业降低关税成本。</p>
+            <p>平台专注于跨境商品结关协作服务。个人利用跨境购物免税额度，以个人名义参与二手交易进口不退税商品流程，分散采购进口商品后转售给合作企业。企业按商品价格的1.8%支付服务报酬，实现企业与个人的双赢。</p>
+            <p>流程简单：预存512元流动资金，系统自动匹配符合条件的进口商品，确认购买后一键转售给企业，本金+收益秒返账户，全程线上操作，无需专业知识。</p>
+            <p>资金安全：预存资金仅作为交易流动资金，支持随时提现，资金安全有保障</p>
+            <p>收益计算：以506元商品为例，单笔利润约9.11元。按每日20单计算，日利润约182.2元（约100-200元）。</p>
+            <p>门槛低：仅需预存512元流动资金即可参与，无其他额外费用。</p>
+            <p>签约用户：初始信用分550分，每做1单结关加1分。做满50单（诚信分达600分）可升级为永久签约用户，享受更多权益。</p>
+            <p>权益对比：签约用户免考直接上岗客服，可申请做代理（推荐新人拿10%提成），可一直做影视推广；而考试上岗用户需培训考试，且仅限做4单推广。</p>
+            <p>设备福利：签约用户上岗当天可免费领取笔记本电脑协助，满足居家办公硬件需求（需做满3个月客服，否则收回）。</p>
+
+        </div>
+    </div>
+
+</body>
+</html>
