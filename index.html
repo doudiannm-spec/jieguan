@@ -99,6 +99,15 @@
             color: #555;
             line-height: 1.6;
         }
+        /* 以下三个标题改为深绿色 */
+        h2.green-title {
+            color: #006400; /* 深绿色 */
+            margin: 25px 0 15px;
+            font-size: 20px;
+            border-left: 4px solid #006400; /* 边框也改为深绿色 */
+            padding-left: 10px;
+        }
+        /* 保留原有的h2样式，但通过类名覆盖特定标题 */
         h2 {
             color: #e6162d; /* 京东红标题色 */
             margin: 25px 0 15px;
@@ -254,15 +263,32 @@
             color: #666;
             line-height: 1.6;
         }
+        /* 为“点击了解详情”添加跳动效果的样式 */
         .detail-link {
             color: #e6162d;
             text-decoration: underline;
             cursor: pointer;
             font-weight: bold;
             margin-left: 5px;
+            /* 跳动动画定义 */
+            animation: bounce 2s infinite;
+            display: inline-block; /* 确保动画生效 */
+        }
+        /* 跳动动画关键帧 */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-8px);
+            }
+            60% {
+                transform: translateY(-4px);
+            }
         }
         .detail-link:hover {
             color: #c91425;
+            animation-play-state: paused; /* 悬停时暂停跳动 */
         }
         /* 流程图样式 */
         .process-container {
@@ -422,7 +448,8 @@
             </div>
         </div>
         <!-- 原有内容：先搞懂结关到底是啥 -->
-        <h2>一、先搞懂：结关到底是啥？</h2>
+        <!-- 修改：将此标题的类名改为 green-title 以应用深绿色 -->
+        <h2 class="green-title">一、先搞懂：结关到底是啥？</h2>
         <p>核心逻辑：本平台专注于跨境商品结关协作服务，通过个人名义参与二手交易进口不限流商品免税流程，帮助企业合理降低关税成本，同时为个人提供稳定、合规的收益渠道。个人利用跨境购物免税额度，分散采购进口商品后转售给合作企业，企业按商品总价的1.8%支付服务报酬，实现企业与个人的双赢。</p>
         <p>核心模式：结关是以个人名义做二手交易进口不限流的商品，然后转售给公司，公司按商品价格的<span class="highlight">1.8%</span>作为报酬（就是赚差价）。</p>
          <!-- 模式优势模块 -->
@@ -505,14 +532,16 @@
             <li>每日上限：一天最多做20单</li>
             <li>签约条件：做满50单（按每天20单算，2天半就能做完）</li>
         </ul>
-        <h2>二、结关能赚多少钱？（举例子算明白）</h2>
+        <!-- 修改：将此标题的类名改为 green-title 以应用深绿色 -->
+        <h2 class="green-title">二、结关能赚多少钱？（举例子算明白）</h2>
         <div class="profit-box">
             <p>举例：做一单结关，商品价格506元</p>
             <p>单单利润：506 × 1.8% ≈ <span class="highlight">9.11元</span></p>
             <p>每日利润（20单）：9.11 × 20 = <span class="highlight">182.2元</span>（每天大概赚100-200元）</p>
             <p>提现规则：预存的512元为流动资金，可循环使用，完成每单后本金+收益即时返还至账户  支持随时提现，提现流程与微信、支付宝等支付工具一致，到账及时 无任何隐藏费用，收益全额到账，平台不收取手续费</p>
         </div>
-        <h2>三、签约用户的规则&专属权益</h2>
+        <!-- 修改：将此标题的类名改为 green-title 以应用深绿色 -->
+        <h2 class="green-title">三、签约用户的规则&专属权益</h2>
         <h3>1. 怎么成为签约用户？</h3>
         <ul>
             <li>初始信用分：550分（可在商城余额旁查看）</li>
@@ -566,19 +595,7 @@
             💡 关键提醒：签约用户资格永久有效，终身受益，后续可根据个人需求随时激活客服岗位，无需重复考核。
         </div>
         
-        <!-- 新增认证信息部分 -->
-        <h2>四、企业认证信息</h2>
-        <div class="profit-box">
-            <p><strong>企业全称：</strong>北京京东世纪贸易有限公司</p>
-            <p><strong>统一社会信用代码：</strong>911103026605015136</p>
-            <p><strong>企业类型：</strong>有限责任公司（台港澳法人独资）</p>
-            <p><strong>企业成立日期：</strong>2021年11月01日</p>
-            <p><strong>企业营业期限：</strong>2007年04月20日</p>
-            <p><strong>企业地址：</strong>北京市北京经济技术开发区科创十一街18号C座2层201室</p>
-            <p><strong>经营类目：</strong>京东国际跨境进口是京东在2015年开启的跨境电子商务新业务，旨在为用户带来更优质更多选择的海外商品，让您足不出户购遍全球。</p>
-            <p><strong>经营范围：</strong>一般项目：线上技术相关服务；结关交易；线上居家客服；影视推广；京东国际跨境进口；物联网应用服务；全球直供</p>
-        </div>
-    </div>
+        
     <!-- 结尾图片 - 图二：跨境数字结关公共服务平台 -->
     <div class="footer-banner">
         <img src="https://github.com/doudiannm-spec/qingguan/raw/main/jieweitupian.jpg" alt="跨境数字结关 公共服务平台">
